@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<h2>Imagen vectorial aleatoria</h2>
+	<form action="/composicion" method="get">
+		<button type="submit">Generar</button>
+	</form>
+	<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+		{{ composicion|safe }}
+	</svg>
+
+
+
+{% endblock %}

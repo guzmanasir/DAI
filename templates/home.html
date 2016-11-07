@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	{% if not session['usuario'] %}
+		<form action="{{ url_for('login') }}" method="post">
+			<label for="username">Usuario: </label><br>
+			<input type="text" name="username"><br>
+			<label for="password">Contraseña:</label><br>
+			<input type="password" name="password"><br>
+			<input type="submit" value="Login">
+		</form> 
+	{% else %}
+ 		<p> Hola {{ session['usuario'] }}</p>
+ 		<form action="{{ url_for('logout') }}" method="post"><button action=submit>Cerrar sesion</button></form>
+	{% endif %}
+
+	<h2>Historial</h2>
+	<ul class="list-group">
+		{% for row in rows %}
+		<li class="list-group-item">{{row}}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

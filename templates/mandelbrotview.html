@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<h2>Fractal de Mandelbrot</h2>
+	<form action="/mandelbrot" method="get">
+		<label for="x1">x1: </label><br>
+		<input type="text" name="x1"><br>
+		<label for="y1">y1: </label><br>
+		<input type="text" name="y1"><br>
+		<label for="x2">x2: </label><br>
+		<input type="text" name="x2"><br>
+		<label for="y2">y2: </label><br>
+		<input type="text" name="y2"><br>
+		<label for="width">width: </label><br>
+		<input type="text" name="width"><br>
+		<label for="iterations">iterations: </label><br>
+		<input type="text" name="iterations"><br>
+		<button type="submit">Generar</button>
+	</form> 
+
+	<!-- <img src="static/img/mandelbrot{{ mandel }}" alt={{ mandel }}  /> -->
+
+{% endblock %}
